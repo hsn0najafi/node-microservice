@@ -1,0 +1,69 @@
+version: '3'
+
+services:
+
+    # 1
+    mongodb:
+        image: mongo
+        ports:
+            - '27017:27017'
+        container_name: mongodb
+        volumes:
+            - ./db/:/data/db
+
+    # 2
+    products:
+        build:
+            dockerfile: Dockerfile
+            context: ./products
+        container_name: products
+        ports:
+            - '8002:8002'
+        restart: always
+        depends_on:
+            - 'mongodb'
+        volumes:
+            - .:/app
+            - /app/products/node_modules
+
+    # 3
+    shopping:
+        build:
+            dockerfile: Dockerfile
+            context: ./shopping
+        container_name: shopping
+        ports:
+            - '8003:8003'
+        restart: always
+        depends_on:
+            - 'mongodb'
+        volumes:
+            - .:/app
+            - /app/shopping/node_modules
+    # 4
+    customer:
+        build:
+            dockerfile: Dockerfile
+            context: ./customer
+        container_name: customer
+        ports:
+            - '8001:8001'
+        restart: always
+        depends_on:
+            - 'mongodb'
+        volumes:
+            - .:/app
+            - /app/customer/node_modules
+
+    # 5
+    nginx-proxy:
+        build:
+            dockerfile: Dockerfile
+            context: ./proxy
+        depends_on:
+            - products
+            - shopping
+            - customer
+        ports:
+            - '80:80'
+
