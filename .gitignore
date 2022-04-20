@@ -3,3 +3,6 @@
 **/.env
 **/jwtRS256*
 
+db
+**/app_error.log
+
