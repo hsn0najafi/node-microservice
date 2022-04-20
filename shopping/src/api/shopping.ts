@@ -4,7 +4,7 @@ import ShoppingService from '../services/shopping-service';
 import { PublishCustomerEvent } from '../utils';
 import UserAuth from './middlewares/auth';
 
-module.exports = (app: Application) => {
+export = (app: Application) => {
     const service = new ShoppingService();
 
     app.post('/order', UserAuth, async (req, res, next) => {

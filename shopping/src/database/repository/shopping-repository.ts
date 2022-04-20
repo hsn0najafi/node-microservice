@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { CustomerModel, ProductModel, OrderModel, CartModel } from '../models';
-import { APIError, BadRequestError } from '../../utils/app-errors';
+import { CartModel, OrderModel } from '../models';
+import { APIError, BadRequestError, STATUS_CODES } from '../../utils/app-errors';
 
 //Dealing with data base operations
 class ShoppingRepository {
@@ -12,7 +12,7 @@ class ShoppingRepository {
             const orders = await OrderModel.find({ customerId });
             return orders;
         } catch (err) {
-            throw APIError('API Error', STATUS_CODES.INTERNAL_ERROR, 'Unable to Find Orders');
+            throw new APIError('API Error', STATUS_CODES.INTERNAL_ERROR, 'Unable to Find Orders');
         }
     }
 
@@ -71,7 +71,7 @@ class ShoppingRepository {
                 });
             }
         } catch (err) {
-            throw APIError('API Error', STATUS_CODES.INTERNAL_ERROR, 'Unable to Create Customer');
+            throw new APIError('API Error', STATUS_CODES.INTERNAL_ERROR, 'Unable to Create Customer');
         }
     }
 
@@ -94,7 +94,6 @@ class ShoppingRepository {
                         amount += parseInt(item.product.price) * parseInt(item.unit);
                     });
 
-                    // 86873645
                     const orderId = uuidv4();
 
                     const order = new OrderModel({
@@ -118,9 +117,9 @@ class ShoppingRepository {
 
             return {};
         } catch (err) {
-            throw APIError('API Error', STATUS_CODES.INTERNAL_ERROR, 'Unable to Find Category');
+            throw new APIError('API Error', STATUS_CODES.INTERNAL_ERROR, 'Unable to Find Category');
         }
     }
 }
 
-module.exports = ShoppingRepository;
+export default ShoppingRepository;
