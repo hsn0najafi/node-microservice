@@ -1,0 +1,72 @@
+[
+    {
+        "name": "alphonso mango",
+        "desc": "great Quality of Mango",
+        "type": "fruits",
+        "banner": "/images/alphonso.jpeg",
+        "unit": 1,
+        "price": 300,
+        "available": true,
+        "suplier": "Golden seed firming"
+    },
+    {
+        "name": "Apples",
+        "desc": "great Quality of Apple",
+        "type": "fruits",
+        "banner": "/images/apples.jpeg",
+        "unit": 1,
+        "price": 140,
+        "available": true,
+        "suplier": "Golden seed firming"
+    },
+    {
+        "name": "Kesar Mango",
+        "desc": "great Quality of Mango",
+        "type": "fruits",
+        "banner": "/images/kesar.jpeg",
+        "unit": 1,
+        "price": 170,
+        "available": true,
+        "suplier": "Golden seed firming"
+    },
+    {
+        "name": "Langra Mango",
+        "desc": "great Quality of Mango",
+        "type": "fruits",
+        "banner": "/images/langra.jpeg",
+        "unit": 1,
+        "price": 280,
+        "available": true,
+        "suplier": "Golden seed firming"
+    },
+    {
+        "name": "Broccoli",
+        "desc": "great Quality of Fresh Vegetable",
+        "type": "vegetables",
+        "banner": "/images/broccoli.jpeg",
+        "unit": 1,
+        "price": 280,
+        "available": true,
+        "suplier": "Golden seed firming"
+    },
+    {
+        "name": "Cauliflower",
+        "desc": "great Quality of Fresh Vegetable",
+        "type": "vegetables",
+        "banner": "/images/cauliflower.jpeg",
+        "unit": 1,
+        "price": 280,
+        "available": true,
+        "suplier": "Golden seed firming"
+    },
+    {
+        "name": "Olive Oil",
+        "desc": "great Quality of Oil",
+        "type": "oils",
+        "banner": "/images/oliveoil.jpg",
+        "unit": 1,
+        "price": 400,
+        "available": true,
+        "suplier": "Golden seed firming"
+    }
+]
