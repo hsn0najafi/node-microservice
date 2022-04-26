@@ -1,0 +1,465 @@
+{
+  "info": {
+    "_postman_id": "2631b856-fd50-4a10-836a-91d34a93da48",
+    "name": "node-microservice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Shopping",
+      "item": [
+        {
+          "name": "Shopping_Cart",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3Q0QHRlc3QuY29tIiwiX2lkIjoiNjI2Nzk3ZjBiN2FjMjVhNGRmMzIzMDJkIiwiaWF0IjoxNjUwOTU2MjcyLCJleHAiOjE2NTEwNDI2NzJ9.J7RKV10OmlRLlgTntJo9ywb98JtYK-GVb2cME7SD4Jg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{MS_BASE}}/shopping/cart",
+              "host": ["{{MS_BASE}}"],
+              "path": ["shopping", "cart"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Shopping_Create_Order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"txnId\": \"afs25ww5\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/shopping/order",
+              "host": ["{{MS_BASE}}"],
+              "path": ["shopping", "order"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Shopping_Orders",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/shopping/orders",
+              "host": ["{{MS_BASE}}"],
+              "path": ["shopping", "orders"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "Customer_Signup",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"test4@test.com\",\n    \"password\":\"12345\",\n    \"phone\":\"12345\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/customer/signup",
+              "host": ["{{MS_BASE}}"],
+              "path": ["customer", "signup"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Customer_Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"test4@test.com\",\n    \"password\":\"12345\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/customer/login",
+              "host": ["{{MS_BASE}}"],
+              "path": ["customer", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Customer_Profile",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/customer/profile",
+              "host": ["{{MS_BASE}}"],
+              "path": ["customer", "profile"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Customer_Shopping_details",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/customer/shoping-details",
+              "host": ["{{MS_BASE}}"],
+              "path": ["customer", "shoping-details"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Customer_Add_Address",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"street\": \"Iran\", \n   \"postalCode\":\"400066\", \n   \"city\":\"Tabriz\",\n   \"country\":\"Iran\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/customer/address",
+              "host": ["{{MS_BASE}}"],
+              "path": ["customer", "address"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Customer_Wishlist",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{MS_BASE}}/customer/wishlist",
+              "host": ["{{MS_BASE}}"],
+              "path": ["customer", "wishlist"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Test Request Listener",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"payload\": {\n        \"event\": \"TESTING\",\n        \"data\": {}\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/customer/app-events",
+              "host": ["{{MS_BASE}}"],
+              "path": ["customer", "app-events"]
+            }
+          },
+          "response": []
+        }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [""]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [""]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Products_Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"test\",\n    \"desc\":\"test\",\n    \"type\":\"test\",\n    \"banner\":\"http://exam.com/images/test.jpg\",\n    \"unit\":1,\n    \"price\":400, \n    \"available\":true,\n    \"suplier\":\"test\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/product/create",
+              "host": ["{{MS_BASE}}"],
+              "path": ["product", "create"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Products_Selected",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"ids\": [\n        \"611badc2eeef961f9d33f2e4\",\n        \"611badc2eeef961f9d33f2e4\"\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/ids",
+              "host": ["{{MS_BASE}}"],
+              "path": ["ids"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Products_Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{MS_BASE}}/category/fruits",
+              "host": ["{{MS_BASE}}"],
+              "path": ["category", "fruits"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Products_View",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{MS_BASE}}/",
+              "host": ["{{MS_BASE}}"],
+              "path": [""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Products_Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{MS_BASE}}/62679b84a8cdad979e4cf22e",
+              "host": ["{{MS_BASE}}"],
+              "path": ["62679b84a8cdad979e4cf22e"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add_To_Wishlist",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"_id\": \"62679b84a8cdad979e4cf22e\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/wishlist",
+              "host": ["{{MS_BASE}}"],
+              "path": ["wishlist"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add_To_Cart",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"_id\": \"62679b84a8cdad979e4cf22e\",\n    \"qty\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/cart",
+              "host": ["{{MS_BASE}}"],
+              "path": ["cart"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete_From_Cart",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/cart/62679b84a8cdad979e4cf22e",
+              "host": ["{{MS_BASE}}"],
+              "path": ["cart", "62679b84a8cdad979e4cf22e"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove_From_Wishlist",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{MS_BASE}}/wishlist/62679b84a8cdad979e4cf22e",
+              "host": ["{{MS_BASE}}"],
+              "path": ["wishlist", "62679b84a8cdad979e4cf22e"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3Q0QHRlc3QuY29tIiwiX2lkIjoiNjI2Nzk3ZjBiN2FjMjVhNGRmMzIzMDJkIiwiaWF0IjoxNjUwOTU2MjcyLCJleHAiOjE2NTEwNDI2NzJ9.J7RKV10OmlRLlgTntJo9ywb98JtYK-GVb2cME7SD4Jg",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "MS_BASE",
+      "value": "127.0.0.1:80",
+      "type": "string"
+    }
+  ]
+}
